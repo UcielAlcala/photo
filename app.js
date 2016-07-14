@@ -8,7 +8,15 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+// Lo que yo hice jejeeje
+var routes1 = require('./routes');
+var photos = require('./routes/photos');
+
 var app = express();
+
+//Replaces app.get('/', routes.index)
+app.get('/', photos.list);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
